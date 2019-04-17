@@ -34,7 +34,7 @@ router.get('/:id/edit', function(req, res)
     if (err){
       console.log(err);
     } else {
-      res.render('show.ejs', {
+      res.render('edit.ejs', {
         grocery: item,
         id: req.params.id
       });

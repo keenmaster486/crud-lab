@@ -7,10 +7,10 @@ require('./db/db');
 
 const app = express();
 
-const port = process.env.PORT;
-if (process.env.PORT == null || process.env.PORT == "")
+let port = process.env.PORT;
+if (process.env.PORT == null || process.env.PORT == "" || process.env.PORT == undefined)
 {
-	process.env.PORT = 3000;
+	port = 3000;
 }
 
 //GROCERY LIST WEBAPP SERVER

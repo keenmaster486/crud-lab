@@ -28,6 +28,21 @@ router.get('/:id', function(req, res)
   })
 });
 
+router.get('/:id/edit', function(req, res)
+{
+  Item.findById(req.params.id, (err, item)=>{
+    if (err){
+      console.log(err);
+    } else {
+      res.render('show.ejs', {
+        grocery: item,
+        id: req.params.id
+      });
+    }
+  })
+});
+
+
 router.delete('/:id', function(req, res)
 {
   Item.findByIdAndDelete(req.params.id, (err, item)=>{

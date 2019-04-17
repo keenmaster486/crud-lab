@@ -2,7 +2,7 @@ const express = require('express');
 const router  = express.Router();
 const Item    = require('../models/itemSchema')
 
-router.get('/grocery', function(req, res)
+router.get('/', function(req, res)
 {
   Item.find({}, (err, foundItems)=>{
     if (err) {

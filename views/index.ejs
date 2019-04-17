@@ -9,7 +9,8 @@
     <ul>
       <% for (let i = 0; i < groceries.length; i++) { %>
         <li>
-          <a href="/grocery/<%=groceries[i]._id%>">groceries[i].name</a>
+          <a href="/grocery/<%=groceries[i]._id%>"><%=groceries[i].name%></a>
+          AMOUNT: <%=groceries[i].amount%>
           <form action="/grocery/<%=groceries[i]._id%>?_method=DELETE" method="post">
             <button type="submit">DELETE</button>
           </form>

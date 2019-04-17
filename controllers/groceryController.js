@@ -15,6 +15,20 @@ router.get('/', function(req, res)
   })
 });
 
+router.get('/new', function(req, res){
+    res.render('new.ejs')
+});
+
+router.post('/', function(req,res){
+  Item.create(req.body, (err, createditem)=>{
+    if (err) {
+      console.log(err);
+    } else {
+      res.redirect('/grocery')
+    }
+  })
+})
+
 router.get('/:id', function(req, res)
 {
   Item.findById(req.params.id, (err, item)=>{

@@ -4,13 +4,14 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const app = express();
 
+const groceryController = require('./controllers/groceryController');
 
 require('./db/db');
 
 
 app.use(express.static('public'));
 app.use(methodOverride('_method'))
-
+app.use('/grocery', groceryController)
 
 
 

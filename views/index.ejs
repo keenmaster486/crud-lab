@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    <ul>
+      <% for (let i = 0; i < groceries.length; i++) { %>
+        <li>
+          <a href="/grocery/<%=groceries[i]._id%>">groceries[i].name</a>
+          <form action="/grocery/<%=groceries[i]._id%>?_method=DELETE" method="post">
+            <button type="submit">DELETE</button>
+          </form>
+        </li>
+        <%}%>
+    </ul>
+
+
+
+  </body>
+</html>

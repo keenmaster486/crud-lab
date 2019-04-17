@@ -15,11 +15,29 @@ router.get('/', function(req, res)
   })
 });
 
-router.get('/grocery/:id', function(req, res)
+router.get('/:id', function(req, res)
 {
-	res.render('show.ejs', {});
+  Item.findById(req.params.id, (err, item)=>{
+    if (err){
+      console.log(err);
+    } else {
+      res.render('show.ejs', {
+        grocery: item
+      });
+    }
+  })
 });
 
+router.delete('/:id', function(req, res)
+{
+  Item.findByIdAndDelete(req.params.id, (err, item)=>{
+    if (err){
+      console.log(err);
+    } else {
+      res.redirect('/grocery')
+    }
+  })
+});
 
 
 

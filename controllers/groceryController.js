@@ -1,12 +1,21 @@
 const express = require('express');
 const router  = express.Router();
+const Item    = require('../models/itemSchema')
 
-app.get('/grocery', function(req, res)
+router.get('/grocery', function(req, res)
 {
-	res.render('index.ejs', {})
+  Item.find({}, (err, foundItems)=>{
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('index.ejs', {
+        groceries: foundItems
+      })
+    }
+  })
 });
 
-app.get('/grocery/:id', function(req, res)
+router.get('/grocery/:id', function(req, res)
 {
 	res.render('show.ejs', {});
 });

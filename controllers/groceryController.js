@@ -1,4 +1,5 @@
-app.use(express.static('public'));
+const express = require('express');
+const router  = express.Router();
 
 app.get('/grocery', function(req, res)
 {
@@ -9,3 +10,8 @@ app.get('/grocery/:id', function(req, res)
 {
 	res.render('show.ejs', {});
 });
+
+
+
+
+module.exports = router;

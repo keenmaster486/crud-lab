@@ -8,9 +8,9 @@
 
 	<h1>Editing <%=grocery.name%></h1>
 
-	<form action="/grocery/<%=id%>/edit?_method=PUT" method="POST">
-		<input type="text" name="name"><%=grocery.name%></input>
-		<input type="text" name="amount"><%=grocery.amount%></input>
+	<form action="/grocery/<%=id%>?_method=PUT" method="POST">
+		<input type="text" name="name" value="<%=grocery.name%>"></input>
+		<input type="number" name="amount" value="<%=grocery.amount%>"></input>
 		<button type="submit">Submit</button>
 	</form>
 

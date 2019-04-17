@@ -55,5 +55,17 @@ router.delete('/:id', function(req, res)
 });
 
 
+router.put('/:id', function(req, res)
+{
+  Item.findByIdAndUpdate(req.params.id, req.body, (err, item)=>{
+    if (err){
+      console.log(err);
+    } else {
+      console.log(req.body);
+      res.redirect('/grocery');
+    }
+  })
+});
+
 
 module.exports = router;

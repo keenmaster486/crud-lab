@@ -4,6 +4,7 @@ const methodOverride = require('method-override');
 const mongoose = require('mongoose');
 const app = express();
 
+const groceryController = require('./controllers/groceryController');
 
 require('./db/db');
 

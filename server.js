@@ -10,7 +10,7 @@ require('./db/db');
 
 app.use(express.static('public'));
 app.use(methodOverride('_method'))
-
+app.use('/grocery', groceryController)
 
 
 
